@@ -23,11 +23,11 @@ Redmine::Plugin.register :redmine_tab do
   name 'Tab Plugin'
   author 'James Turnbull'
   description 'A plugin which adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
-  version '0.4.0'
+  version '0.5.0'
 
   settings :default => {
     'tab_text' => '',
-    'tab_name' => 'Tab Name',
+    'tab_name' => '',
     'system_tab_text' => '',
     'system_tab_name' => 'System Tab Name'
 
@@ -56,7 +56,7 @@ Redmine::Plugin.register :redmine_tab do
   menu(:project_menu,
        :tab,
        { :controller => 'tab', :action => 'show' },
-       :caption => Proc.new { string_or_translate.call('tab_name') },
+       :caption => Proc.new { |project| Tab.get_tab_name(project.identifier) },
        :if => Proc.new { !Setting.plugin_redmine_tab['tab_name'].blank? })
 
   # A new item is added to the top menu

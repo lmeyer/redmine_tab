@@ -1,10 +1,12 @@
 <% string_fields = ProjectCustomField.find :all %>
 <% select_options = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['tab_text'].to_i) %>
+<% select_options_name = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['tab_name'].to_i) %>
 
 <fieldset>
 <legend><%= l(:tab_text_project_specific) %></legend>
 <p><label><%= l(:tab_label_tab_name) %></label>
-<%= text_field_tag 'settings[tab_name]', @settings['tab_name'] %><br />
+<%= select_tag 'settings[tab_name]', select_options_name.html_safe %><br />
+<em class="info"><%= l(:tab_help_tab_name) %></em>
 </p>
 
 <p><label><%= l(:tab_label_tab_text) %></label>
