@@ -9,6 +9,7 @@
 
 <p><label><%= l(:tab_label_tab_text) %></label>
 <%= select_tag 'settings[tab_text]', select_options.html_safe %><br />
+<em class="info"><%= l(:tab_help_tab_text) %></em>
 </p>
 </fieldset>
 
@@ -20,5 +21,6 @@
 
 <p><label><%= l(:tab_label_tab_text) %></label>
 <%= text_area_tag 'settings[system_tab_text]', @settings['system_tab_text'] %><br />
+<em class="info"><%= l(:tab_help_system_tab_text) %></em>
 </p>
 </fieldset>

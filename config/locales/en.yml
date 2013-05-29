@@ -3,4 +3,6 @@ en:
   tab_text_systemwide: System wide
   tab_label_tab_name: Tab Name
   tab_label_tab_text: Tab Text
+  tab_help_tab_text: Create a custom field (long text) for projects and choose it here
+  tab_help_system_tab_text: Html content, iframe (displayed)... URL (redirect).
 

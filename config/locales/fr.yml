@@ -3,4 +3,6 @@ fr:
   tab_text_systemwide: Pour l'application
   tab_label_tab_name: Nom Onglet
   tab_label_tab_text: Texte Onglet
+  tab_help_tab_text: Créer un champ personnalisé de type texte long pour les projets et le choisir ici
+  tab_help_system_tab_text: Contenu html, iframe (affichés)... URL (redirigé).
 
