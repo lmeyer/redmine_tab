@@ -17,6 +17,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
+require 'uri'
+
 class TabController < ApplicationController
   unloadable
   
@@ -26,6 +28,9 @@ class TabController < ApplicationController
   
   def show
     @tab_text = Tab.get_tab_text(@project)
+    if Tab.get_tab_text(@project) =~ /^#{URI::regexp}$/
+        redirect_to Tab.get_tab_text(@project)
+    end
   end
 
   def system_show
