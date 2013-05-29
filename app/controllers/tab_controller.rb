@@ -30,6 +30,7 @@ class TabController < ApplicationController
     @tab_text = Tab.get_tab_text(@project)
     if Tab.get_tab_text(@project) =~ /^#{URI::regexp}$/
         redirect_to Tab.get_tab_text(@project)
+        return
     end
   end
 
@@ -37,6 +38,7 @@ class TabController < ApplicationController
     @tab_text = Setting.plugin_redmine_tab['system_tab_text']
     if Setting.plugin_redmine_tab['system_tab_text'] =~ /^#{URI::regexp}$/
         redirect_to Setting.plugin_redmine_tab['system_tab_text']
+        return
     end
     render :action => 'show'
   end
