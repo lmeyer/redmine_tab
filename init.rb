@@ -22,7 +22,7 @@ Rails.logger.info 'Starting Tab plugin for Redmine'
 Redmine::Plugin.register :redmine_tab do
   name 'Tab Plugin'
   author 'James Turnbull'
-  description 'A plugin which adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
+  description 'A plugin which adds Redmine tabs to display content (html, iframe...) or redirect to external URL on a per-project and system-wide base.'
   version '0.5.0'
 
   settings :default => {
